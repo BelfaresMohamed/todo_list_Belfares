@@ -1,13 +1,16 @@
-  // Tableaux pour stocker les tâches dans chaque catégorie
+let inputValue = document.getElementById('inputValue');
+let todo = document.getElementById('todo');
+let doing = document.getElementById('doing');
+let done = document.getElementById('done');
+
   let todotab = [];
   let doingtab = [];
   let donetab = [];
 
   function pushtab() {
-      let inputValue = document.getElementById('inputValue');
-      let task = inputValue.value.trim();
-      if (task !== '') {
-          todotab.push(task);
+      let element = inputValue.value.trim();
+      if (element !== '') {
+          todotab.push(element);
           inputValue.value = '';
           modifier();
       }
@@ -29,33 +32,33 @@
   }
 
   function deplacer(category,index) {
-      let task;
+      let element;
       switch (category) {
           case 'todo':
-              task = todotab.splice(index, 1);
+              element = todotab.splice(index, 1);
               break;
           case 'doing':
-              task = doingtab.splice(index, 1);
+              element = doingtab.splice(index, 1);
               break;
           case 'done':
-              task = donetab.splice(index, 1);
+              element = donetab.splice(index, 1);
               break;
       }
 
       let category_tb = prompt('Déplacez la tâche vers la catégorie (todo/doing/done):');
-      if (category_tb === null || category_tb.trim() === '') {
+      if (category_tb.trim() === '') {
           return;
       }
 
       switch (category_tb) {
           case 'todo':
-              todotab.push(task);
+              todotab.push(element);
               break;
           case 'doing':
-              doingtab.push(task);
+              doingtab.push(element);
               break;
           case 'done':
-              donetab.push(task);
+              donetab.push(element);
               break;
           default:
               alert('il na aucun category de ce nom');
@@ -66,39 +69,37 @@
   }
 
   function modifier() {
-      let todo = document.getElementById('todo');
-      let doing = document.getElementById('doing');
-      let done = document.getElementById('done');
+
 
       // Efface les éléments précédents
       todo.innerHTML = '';
       doing.innerHTML = '';
       done.innerHTML = '';
 
-      // Met à jour la liste des tâches pour chaque catégorie
+      
       for (let index = 0; index < todotab.length; index++) {
-          let task = todotab[index];
-          let item = criationitem(task, 'todo', index);
+          let element = todotab[index];
+          let item = criationitem(element, 'todo', index);
           todo.appendChild(item);   
       }
 
       for (let index = 0; index < doingtab.length; index++) {
-          let task = doingtab[index];
-          let item = criationitem(task, 'doing', index);
+          let element = doingtab[index];
+          let item = criationitem(element, 'doing', index);
           doing.appendChild(item);
       }
 
       for (let index = 0; index < donetab.length; index++) {
-          let task = donetab[index];
-          let item = criationitem(task, 'done', index);
+          let element = donetab[index];
+          let item = criationitem(element, 'done', index);
           done.appendChild(item);
       }
   }
 
-  function criationitem(task, category, index) {
+  function criationitem(element, category, index) {
       let item = document.createElement('div');
       item.className = 'item';
-      item.innerHTML = task;
+      item.innerHTML = element;
       let deleteIcon = document.createElement('i');
       deleteIcon.innerHTML = '❌';
       deleteIcon.addEventListener('click', function () {
@@ -110,7 +111,7 @@
       modifier.addEventListener('click', function () {
           let newValue = prompt('Entrez une nouvelle valeur');
                     if (newValue !== null) {
-                        task[index].value = newValue;
+                        element[index].value = newValue;
                     }
       });
       let deplacerSelect = document.createElement('select');
