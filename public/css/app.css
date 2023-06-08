@@ -26,7 +26,7 @@ nav {
 }
 
 
-/* ////////////////////////////////////////////// */
+/* ////////////////////page 1 ////////////////////////// */
 .container {
     text-align: center;
 }
@@ -37,24 +37,26 @@ nav {
     padding: 10px;
     text-align: left;
     border: 2px solid blue;
-    height: 35vh;
+    height: auto;
 }
 .box-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 5px;
     gap: 6px;
     
 }
 .box-item.completed {
-    color: green;
+    color: rgb(16, 39, 16);
 }
+
 .box-item .action-icon {
     margin-left: 20px;
     cursor: pointer;
     text-align: center;
-    
 }
+
 select {
     margin-bottom: 10px;
 }
@@ -65,6 +67,9 @@ select {
     padding: 10px;
     width: 300px;
     margin-bottom: 3px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
 }
 
 #Button_ajouter{
@@ -73,14 +78,19 @@ select {
     color: white;
     border:2px solid black;
     margin-bottom: 3px;
+    border-radius: 20px;
+    width: 100px;
 
 }
 
 #Select{
     padding: 10px;
-    width: 300px;
+    width: 330px;
     border: 2px solid blue;
     margin-bottom: 3px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
 
 }
 
