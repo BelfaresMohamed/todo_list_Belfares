@@ -58,7 +58,7 @@
               donetab.push(task);
               break;
           default:
-              alert('Catégorie invalide!');
+              alert('il na aucun category de ce nom');
               return;
       }
 
@@ -78,24 +78,24 @@
       // Met à jour la liste des tâches pour chaque catégorie
       for (let index = 0; index < todotab.length; index++) {
           let task = todotab[index];
-          let item = createTaskItem(task, 'todo', index);
-          todo.appendChild(item);
+          let item = criationitem(task, 'todo', index);
+          todo.appendChild(item);   
       }
 
       for (let index = 0; index < doingtab.length; index++) {
           let task = doingtab[index];
-          let item = createTaskItem(task, 'doing', index);
+          let item = criationitem(task, 'doing', index);
           doing.appendChild(item);
       }
 
       for (let index = 0; index < donetab.length; index++) {
           let task = donetab[index];
-          let item = createTaskItem(task, 'done', index);
+          let item = criationitem(task, 'done', index);
           done.appendChild(item);
       }
   }
 
-  function createTaskItem(task, category, index) {
+  function criationitem(task, category, index) {
       let item = document.createElement('div');
       item.className = 'item';
       item.innerHTML = task;
@@ -104,13 +104,13 @@
       deleteIcon.addEventListener('click', function () {
           supprimer(category, index);
       });
-      let editIcon = document.createElement('i');
-      editIcon.innerHTML = '✏️';
+      let modifier = document.createElement('i');
+      modifier.innerHTML = '✏️';
 
-      editIcon.addEventListener('click', function () {
+      modifier.addEventListener('click', function () {
           let newValue = prompt('Entrez une nouvelle valeur');
                     if (newValue !== null) {
-                        task[index].value = newValue.trim();
+                        task[index].value = newValue;
                     }
       });
       let deplacerSelect = document.createElement('select');
@@ -132,7 +132,7 @@
       deplacerSelect.appendChild(choix3);
 
       item.appendChild(deleteIcon);
-      item.appendChild(editIcon);
+      item.appendChild(modifier);
       item.appendChild(deplacerSelect);
 
       return item;
