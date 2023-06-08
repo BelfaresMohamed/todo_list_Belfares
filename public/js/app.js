@@ -1,23 +1,23 @@
 // recup les elements byId
-let inputValue = document.getElementById('inputValue');
-        let addButton = document.getElementById('addButton');
-        let filterSelect = document.getElementById('filterSelect');
-        let box = document.getElementById('box');
+let input = document.querySelector('#input');
+        let button = document.querySelector('#Button_ajouter');
+        let select = document.querySelector('#Select');
+        let box = document.querySelector('#box');
         let elements = [];
 
 
 // push dans le tableaux 
-        addButton.addEventListener('click',()=>{
-             value = inputValue.value;
+        button.addEventListener('click',()=>{
+             value = input.value;
             if (value !== '') {
                 elements.push({ value, completed: false });
                 rendre();
-                inputValue.value = '';
+                input.value = '';
             }
         });
 
         function rendre() {
-            let filterValue = filterSelect.value;
+            let filterValue = select.value;
             let filteredElements = filterValue === 'completed' ? elements.filter(element => element.completed) :
                 filterValue === 'uncompleted' ? elements.filter(element => !element.completed) :
                     elements;
@@ -45,7 +45,7 @@ let inputValue = document.getElementById('inputValue');
                     elements.splice(index, 1);
                     rendre();
                 });
-                //MODIFIER
+                
                 let editIcon = document.createElement('span');
                 editIcon.className = 'action-icon';
                 editIcon.innerHTML = '✏️';

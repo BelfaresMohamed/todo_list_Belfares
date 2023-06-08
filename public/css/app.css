@@ -57,14 +57,14 @@ select {
 }
 
 
-#inputValue{
+#input{
     border: 2px solid blue;
     padding: 10px;
     width: 300px;
     margin-bottom: 3px;
 }
 
-#addButton{
+#Button_ajouter{
     padding: 10px;
     background-color: blue;
     color: white;
@@ -73,7 +73,7 @@ select {
 
 }
 
-#filterSelect{
+#Select{
     padding: 10px;
     width: 300px;
     border: 2px solid blue;
