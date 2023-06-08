@@ -114,21 +114,22 @@
                     }
       });
       let deplacerSelect = document.createElement('select');
+      deplacerSelect.className = 'secl';
       deplacerSelect.addEventListener('change', function () {
           deplacer(category, index);
       });
-      let option1 = document.createElement('option');
-      option1.value = 'todo';
-      option1.text = 'À faire';
-      let option2 = document.createElement('option');
-      option2.value = 'doing';
-      option2.text = 'En cours';
-      let option3 = document.createElement('option');
-      option3.value = 'done';
-      option3.text = 'Terminé';
-      deplacerSelect.appendChild(option1);
-      deplacerSelect.appendChild(option2);
-      deplacerSelect.appendChild(option3);
+      let choix1 = document.createElement('option');
+      choix1.value = 'todo';
+      choix1.text = 'À faire';
+      let choix2 = document.createElement('option');
+      choix2.value = 'doing';
+      choix2.text = 'En cours';
+      let choix3 = document.createElement('option');
+      choix3.value = 'done';
+      choix3.text = 'Terminé';
+      deplacerSelect.appendChild(choix1);
+      deplacerSelect.appendChild(choix2);
+      deplacerSelect.appendChild(choix3);
 
       item.appendChild(deleteIcon);
       item.appendChild(editIcon);

@@ -95,6 +95,12 @@ select {
     border:2px solid black;
     margin-left: 10px;
 }
+#inputValue{
+    border: 2px solid blue;
+    padding: 11px;
+    width: 300px;
+    margin-bottom: 3px;
+}
 .input-container {
     display: flex;
     align-items: center;
@@ -118,25 +124,27 @@ h2{
 }
 .category {
     width: 300px;
-    height: 30vh;
+    height: auto;
     padding: 10px;
     border: 2px solid rgb(22, 10, 192);
     margin: 0 10px;
 }
-.todo-items,
-.doing-items,
-.done-items {
-    margin-top: 10px;
-}
+
 .item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
     padding: 5px;
-    border: 1px solid lightgray;
+    border: 3px solid rgb(58, 20, 226);
     margin-bottom: 5px;
 }
 select {
     margin-left: 10px;
+    
+}
+
+.secl{
+    border: 2px solid blue;
+    padding: 5px;
 }
