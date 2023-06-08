@@ -46,6 +46,7 @@ nav {
     text-align: left;
     border: 2px solid blue;
     height: auto;
+    border-radius: 20px;
 }
 .box-item {
     display: flex;

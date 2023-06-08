@@ -16,28 +16,10 @@ function pushtab() {
     }
 }
 
-
-function supprimer(category, index) {
-    if (category === 'todo') {
-        todotab.splice(index, 1);
-    } else {
-        if (category === 'doing') {
-            doingtab.splice(index, 1);
-        } else {
-            if (category === 'done') {
-                donetab.splice(index, 1);
-            }
-        }
-    }
-
-    modifier();
-}
-
 // cette function je veux l'appeler qu'on je peut modifier 
 function modifier() {
 
 
-    // Efface les éléments précédents
     todo.innerHTML = '';
     doing.innerHTML = '';
     done.innerHTML = '';
@@ -61,6 +43,24 @@ function modifier() {
         done.appendChild(item);
     }
 }
+
+function supprimer(category, index) {
+    if (category === 'todo') {
+        todotab.splice(index, 1);
+    } else {
+        if (category === 'doing') {
+            doingtab.splice(index, 1);
+        } else {
+            if (category === 'done') {
+                donetab.splice(index, 1);
+            }
+        }
+    }
+
+    modifier();
+}
+
+
 
 function deplacer(category, index, newSelectVal) {
     let element;
@@ -96,6 +96,28 @@ function deplacer(category, index, newSelectVal) {
 
     modifier();
 }
+
+ // creation d'un nouveau select qui peut deplacer à  l'autre tableaux
+ let deplacerSelect = document.createElement('select');
+ let choix3 = document.createElement('option');
+ let choix2 = document.createElement('option');
+ let choix1 = document.createElement('option');
+ deplacerSelect.className = 'secl';
+ deplacerSelect.addEventListener('change', function () {
+     let newSelectVal = document.querySelector(".secl").value
+     deplacer(category, index, newSelectVal);
+ });
+ choix1.value = 'todo';
+ choix1.text = 'box1';
+ choix2.value = 'doing';
+ choix2.text = 'box2';
+ choix3.value = 'done';
+ choix3.text = 'box3';
+
+ deplacerSelect.appendChild(choix1);
+ deplacerSelect.appendChild(choix2);
+ deplacerSelect.appendChild(choix3);
+
 
 
 function ajouteritem(element, category, index) {
@@ -136,28 +158,7 @@ function ajouteritem(element, category, index) {
 
 
 
-    // creation d'un nouveau select qui peut deplacer à  l'autre tableaux
-    let deplacerSelect = document.createElement('select');
-    deplacerSelect.className = 'secl';
-    deplacerSelect.addEventListener('change', function () {
-        let newSelectVal = document.querySelector(".secl").value
-        deplacer(category, index, newSelectVal);
-    });
-    let choix1 = document.createElement('option');
-    choix1.value = 'todo';
-    choix1.text = 'À faire';
-
-    let choix2 = document.createElement('option');
-    choix2.value = 'doing';
-    choix2.text = 'En cours';
-
-    let choix3 = document.createElement('option');
-    choix3.value = 'done';
-    choix3.text = 'Terminé';
-
-    deplacerSelect.appendChild(choix1);
-    deplacerSelect.appendChild(choix2);
-    deplacerSelect.appendChild(choix3);
+   
 
     item.appendChild(deleteIcon);
     item.appendChild(modifierIcon);

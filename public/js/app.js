@@ -3,12 +3,14 @@ let input = document.querySelector('#input');
 let button = document.querySelector('#Button_ajouter');
 let select = document.querySelector('#Select');
 let box = document.querySelector('#box');
+
+
 let elements = [];
 
 
 // push dans le tableaux 
 button.addEventListener('click', () => {
-    value = input.value;
+   let value = input.value;
     if (value !== '') {
         elements.push({ value, completed: false });
         rendre();
@@ -22,7 +24,7 @@ function rendre() {
 
     if (selectVl === 'compler') {
         for (let index = 0; index < elements.length; index++) {
-            const element = elements[index];
+            let element = elements[index];
             if (element.completed ==true) {
               selectelemnts.push(element);
             }
@@ -30,8 +32,10 @@ function rendre() {
           
     } else if (selectVl === 'no compler') {
         for (let index = 0; index < elements.length; index++) {
-            if (!elements[index].completed) {
-              selectelemnts.push(elements[i]);
+            let element = elements[index];
+
+            if (element.completed == false) {
+              selectelemnts.push(element);
             }
           }
     } else {
@@ -50,6 +54,7 @@ function rendre() {
           
         item.innerHTML = '<p>' + element.value + '</p>';
       
+        // j'ai creer cette div pour mait tout mais span
         let actionsDiv = document.createElement('div');
       
         let completeIcon = document.createElement('span');
