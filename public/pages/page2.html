@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../pages/page1.html">Page 1 </a></li>
+                <li><a href="../pages/page2.html">Page 2 </a></li>
+                <li><a href="../pages/page3.html">Page 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="input-container">
+            <input type="text" id="inputValue" placeholder="Entrez une tâche">
+            <button id="btn_ajou" onclick="pushtab()">Ajouter</button>
+        </div>
+        <div class="container_cat">
+            <div class="category">
+                <h2>À faire</h2>
+                <div id="todo" class="todo-items"></div>
+            </div>
+            <div class="category">
+                <h2>En cours</h2>
+                <div id="doing" class="doing-items"></div>
+            </div>
+            <div class="category">
+                <h2>Terminé</h2>
+                <div id="done" class="done-items"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="../js/app2.js"></script>
+</body>
+</html>
