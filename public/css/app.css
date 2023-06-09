@@ -170,3 +170,60 @@ select {
     border: 2px solid blue;
     padding: 5px;
 }
+
+/* //////////////page 3 //////////////////////////// */
+
+.container_page3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+}
+#text{
+    padding: 12px;
+    border: 1px solid blue;
+    border-radius: 20px;
+    width: 250px;
+}
+
+#btn_add{
+    padding: 12px;
+    border: 1px solid blue;
+    border-radius: 20px;
+    width: 280px;
+    background-color: blue;
+    color: white;
+    margin-top: 3px;
+}
+
+
+
+.list{
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding-top: 10px;
+    
+}
+
+.box_pages3{
+    border: 1px solid blue;
+    border-radius: 20px;
+    height: auto;
+    width: 300px;
+    text-align: center;
+}
+
+.box_pages3 h2{
+    color: blue;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.box_pages3 p{
+    background-color: aquamarine;
+    font-size: xx-large;
+    font-weight: bolder;
+}
