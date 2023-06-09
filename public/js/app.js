@@ -13,12 +13,13 @@ button.addEventListener("click", () => {
    let value = input.value;
     if (value != '') {
         elements.push({ value, completed: false });
-        rendre();
+        general();
         input.value = '';
     }
 });
 
-function rendre() {
+
+function general() {
     let selectVl = select.value;
     let selectelemnts=[];
 
@@ -62,8 +63,11 @@ function rendre() {
         completeIcon.className = "action-icon";
         completeIcon.innerHTML = '<i class="fa-solid fa-check" style="color: #25511f;"></i>';
         completeIcon.addEventListener("click", () => {
-          elements[index].completed = !elements[index].completed;
-          rendre();
+          if (elements[index].completed) {
+            elements[index].completed = false;
+          } else {
+            elements[index].completed = true;
+          }          general();
         });
         actionsDiv.appendChild(completeIcon);
       
@@ -72,7 +76,7 @@ function rendre() {
         deleteIcon.innerHTML = '<i class="fa-solid fa-trash" style="color: #ff0000;"></i>';
         deleteIcon.addEventListener("click", () => {
           elements.splice(index, 1);
-          rendre();
+          general();
         });
         actionsDiv.appendChild(deleteIcon);
       
@@ -83,7 +87,7 @@ function rendre() {
           let value_modifier = prompt("Entrez une nouvelle valeur");
           if (value_modifier != null) {
             elements[index].value = value_modifier;
-            rendre();
+            general();
           }
         });
         actionsDiv.appendChild(editIcon);

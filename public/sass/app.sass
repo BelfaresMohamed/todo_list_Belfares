@@ -1,24 +1,29 @@
+body
+  background-image: url("../imgs/0c46d986b1fd8a633b19e5c834185180.jpg")
+  background-size: 600px
+  background-position: center
+  background-repeat: repeat
+
 ul
   display: flex
-  justify-content: space-evenly
+  justify-content: space-around
   align-items: center
-  
 
 a
-  color: black
+  color: rgb(35, 36, 129)
   font-weight: bold
-  text-decoration: double
   font-size: larger
+  text-decoration: none
 
 li
   list-style: none
 
 nav
-  background-color: ###1606fc
+  background-color: rgba(255, 255, 255, 0)
   padding: 10px
   margin-bottom: 20px
 
-/* //////////////////////////////////////////////
+/* ////////////////////page 1 //////////////////////////
 
 .container
   text-align: center
@@ -29,17 +34,19 @@ nav
   border: 1px solid #ccc
   padding: 10px
   text-align: left
-  border: 2px solid ###1606fc
-  height: 35vh
+  border: 2px solid blue
+  height: auto
+  border-radius: 20px
 
 .box-item
   display: flex
   align-items: center
+  justify-content: space-between
   margin-bottom: 5px
   gap: 6px
 
   &.completed
-    color: green
+    color: rgb(20, 238, 20)
 
   .action-icon
     margin-left: 20px
@@ -50,23 +57,31 @@ select
   margin-bottom: 10px
 
 #input
-  border: 2px solid ###1606fc
+  border: 2px solid blue
   padding: 10px
   width: 300px
   margin-bottom: 3px
+  border-radius: 20px
+  background-color: black
+  color: white
 
 #Button_ajouter
   padding: 10px
-  background-color: ###1606fc
+  background-color: blue
   color: white
   border: 2px solid black
   margin-bottom: 3px
+  border-radius: 20px
+  width: 100px
 
 #Select
   padding: 10px
-  width: 300px
-  border: 2px solid ###1606fc
+  width: 330px
+  border: 2px solid blue
   margin-bottom: 3px
+  border-radius: 20px
+  background-color: black
+  color: white
 
 /* ///////////////////////////page2 ////////////////////////////////////////////////
 
@@ -77,13 +92,13 @@ select
 
 #btn_ajou
   padding: 10px
-  background-color: ###1606fc
+  background-color: blue
   color: white
   border: 2px solid black
   margin-left: 10px
 
 #inputValue
-  border: 2px solid ###1606fc
+  border: 2px solid blue
   padding: 11px
   width: 300px
   margin-bottom: 3px
@@ -101,7 +116,7 @@ select
   gap: 10rem
 
 h2
-  color: ###1606fc
+  color: blue
   font-style: italic
   font-size: 30px
   background-color: black
@@ -127,5 +142,52 @@ select
   margin-left: 10px
 
 .secl
-  border: 2px solid ###1606fc
+  border: 2px solid blue
   padding: 5px
+
+/* //////////////page 3 ////////////////////////////
+
+.container_page3
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  flex-direction: column
+
+#text
+  padding: 12px
+  border: 1px solid blue
+  border-radius: 20px
+  width: 250px
+
+#btn_add
+  padding: 12px
+  border: 1px solid blue
+  border-radius: 20px
+  width: 280px
+  background-color: blue
+  color: white
+  margin-top: 3px
+
+.list
+  display: flex
+  justify-content: space-around
+  gap: 15px
+  padding-top: 10px
+
+.box_pages3
+  border: 1px solid blue
+  border-radius: 20px
+  height: auto
+  width: 300px
+  text-align: center
+
+  h2
+    color: blue
+    font-size: xx-large
+    font-weight: bold
+
+  p
+    background-color: aquamarine
+    font-size: xx-large
+    font-weight: bolder
