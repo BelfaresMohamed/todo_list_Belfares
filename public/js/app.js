@@ -3,8 +3,6 @@ let input = document.querySelector("#input");
 let button = document.querySelector("#Button_ajouter");
 let select = document.querySelector("#Select");
 let box = document.querySelector("#box");
-
-
 let elements = [];
 
 
@@ -17,6 +15,10 @@ button.addEventListener("click", () => {
         input.value = '';
     }
 });
+
+select.addEventListener("change",()=>{
+  general()
+})
 
 
 function general() {
@@ -55,7 +57,7 @@ function general() {
           }
           
         item.innerHTML = "<p>" + element.value + "</p>";
-      
+          
         // j'ai creer cette div pour mait tout mais span
         let actionsDiv = document.createElement("div");
       
@@ -85,7 +87,7 @@ function general() {
         editIcon.innerHTML = '<i class="fa-solid fa-marker" style="color: #0b25ea;"></i>';
         editIcon.addEventListener("click", () => {
           let value_modifier = prompt("Entrez une nouvelle valeur");
-          if (value_modifier != null) {
+          if (value_modifier != "") {
             elements[index].value = value_modifier;
             general();
           }
